@@ -22,6 +22,7 @@ class CreateRoomsTable extends Migration
             $table->integer('capacity');
             $table->integer('price_per_month');
             $table->boolean('is_available');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

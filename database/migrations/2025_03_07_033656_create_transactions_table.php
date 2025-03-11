@@ -27,6 +27,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('duration');
             $table->integer('total_amount')->nullable();
             $table->date('transaction_date')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

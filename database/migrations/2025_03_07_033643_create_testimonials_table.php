@@ -19,6 +19,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('photo');
             $table->string('name');
             $table->integer('rating');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -19,6 +19,7 @@ class CreateBonusesTable extends Migration
             $table->string('image');
             $table->string('name');
             $table->string('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
