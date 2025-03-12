@@ -18,6 +18,7 @@ class CreateTestimonialsTable extends Migration
             $table->foreignId('boarding_house_id')->constrained()->cascadeOnDelete();
             $table->string('photo');
             $table->string('name');
+            $table->string('content');
             $table->integer('rating');
             $table->softDeletes();
             $table->timestamps();
