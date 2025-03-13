@@ -35,3 +35,29 @@ if ($category) {
 
 return $query->get();
 }
+
+public function getPopularBoardingHouses($limit = 5)
+{
+    return BoardingHouse::withCount('transactions')->orderBy('transactions_count', 'desc')
+    ->take($limit)->get();
+}
+
+public function getBoardingHousesByCitySlug($slug)
+{
+    return BoardingHouse::whereHas('city',function (Builder $query) use ($slug) {
+        $query->where('slug', $slug);
+    }) ->get();
+}
+
+public function getBoardingHousesByCategorySlug($slug)
+{
+    return BoardingHouse::whereHas('category',function (Builder $query) use ($slug) {
+        $query->where('slug', $slug);
+    }) ->get();
+}
+
+public function getBoardingHousesBySlug($slug)
+{
+    return BoardingHouse::where('slug', $slug)->first();
+}
+}
