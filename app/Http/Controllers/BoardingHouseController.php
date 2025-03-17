@@ -26,6 +26,8 @@ class BoardingHouseController extends Controller
         $this->boardingHouseRepository = $boardingHouseRepository;
     }
 
+   
+
 
     public function show($slug)
     {

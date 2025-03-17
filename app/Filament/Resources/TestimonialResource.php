@@ -38,8 +38,7 @@ class TestimonialResource extends Resource
                 ->columnSpan(2),
                 Forms\Components\TextInput::make('name')
                 ->required(),
-                Forms\Components\TextInput::make('slug')
-                ->required(),
+               
                 Forms\Components\TextInput::make('rating')
                 ->numeric()
                 ->minValue(1)
@@ -62,9 +61,9 @@ class TestimonialResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+               
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
